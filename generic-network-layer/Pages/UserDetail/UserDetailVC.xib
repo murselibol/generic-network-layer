@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailVC" customModule="generic_network_layer" customModuleProvider="target">
+            <connections>
+                <outlet property="bodyTextField" destination="X0O-E7-lyW" id="K6l-dq-8Ab"/>
+                <outlet property="titleLabel" destination="19P-SF-IqL" id="DR7-ex-hDc"/>
+                <outlet property="titleTextField" destination="XN8-nk-PX8" id="k9c-WC-9Hn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User firstName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19P-SF-IqL">
+                    <rect key="frame" x="10" y="69" width="373" height="26.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YMk-WP-0Rg">
+                    <rect key="frame" x="10" y="195.33333333333337" width="373" height="152.66666666666663"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcf-d3-UJw">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XN8-nk-PX8">
+                            <rect key="frame" x="0.0" y="30.333333333333314" width="373" height="34"/>
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter body" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0O-E7-lyW">
+                            <rect key="frame" x="0.0" y="74.333333333333343" width="373" height="34"/>
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-wA-yNN">
+                            <rect key="frame" x="0.0" y="118.33333333333333" width="373" height="34.333333333333329"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="tinted" title="Save"/>
+                            <connections>
+                                <action selector="onSubmitPostForm:" destination="-1" eventType="touchUpInside" id="ttO-45-1W2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="YMk-WP-0Rg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="7HW-6H-AtQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="19P-SF-IqL" secondAttribute="trailing" constant="10" id="AxF-Mq-dyk"/>
+                <constraint firstItem="YMk-WP-0Rg" firstAttribute="top" secondItem="19P-SF-IqL" secondAttribute="bottom" constant="100" id="EYx-Em-ySk"/>
+                <constraint firstItem="19P-SF-IqL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="vcP-vi-4Jg"/>
+                <constraint firstItem="19P-SF-IqL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="wKt-jl-Zqx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YMk-WP-0Rg" secondAttribute="trailing" constant="10" id="wxz-Ra-waL"/>
+            </constraints>
+            <point key="canvasLocation" x="29.770992366412212" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
