@@ -19,9 +19,9 @@ final class HomeVM {
     var posts: [Post] = []
     private var page: Int = 1
     private let limit: Int = 2
-    var paginationQuery: [String: String] = [
-        "_page": "1",
-        "_limit": "10",
+    var paginationQuery: [URLQueryItem] = [
+        URLQueryItem(name: "_page", value: "1"),
+        URLQueryItem(name: "_limit", value: "10")
     ]
     
     
@@ -53,8 +53,9 @@ extension HomeVM: HomeVMInterface {
     }
     
     func pullToGetPosts() {
-        if let currentPage = paginationQuery["_page"] {
-            paginationQuery["_page"] = String(Int(currentPage)! + 1)
+        if let queryIndex = paginationQuery.firstIndex(where: { $0.name == "_page" }) {
+            let currentPage = Int(paginationQuery[queryIndex].value!)! + 1
+            paginationQuery.append(.init(name: "_page", value: String(currentPage)))
             getPosts()
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 enum PostProvider {
-    case posts(queryItems: [String: String])
+    case posts(queryItems: [URLQueryItem]?)
     case post(body: PostReq)
 }
 
@@ -31,7 +31,7 @@ extension PostProvider: Endpoint {
         }
     }
 
-    var queryItems: [String : Any]? {
+    var queryItems: [URLQueryItem]? {
         switch self {
         case .posts(let queryItems):
             return queryItems

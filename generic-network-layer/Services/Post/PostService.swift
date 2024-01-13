@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PostServiceProtocol {
-    func getPosts(queryItems: [String: String], completion: @escaping (Result<[Post], NetworkError>) -> Void)
+    func getPosts(queryItems: [URLQueryItem], completion: @escaping (Result<[Post], NetworkError>) -> Void)
     func create(body: PostReq, completion: @escaping (Result<PostReq, NetworkError>) -> Void)
 }
 
@@ -17,7 +17,7 @@ final class PostService: PostServiceProtocol {
     static let shared = PostService()
     private init() {}
     
-    func getPosts(queryItems: [String: String] = [:], completion: @escaping (Result<[Post], NetworkError>) -> Void) {
+    func getPosts(queryItems: [URLQueryItem] = [], completion: @escaping (Result<[Post], NetworkError>) -> Void) {
          let request = PostProvider.posts(queryItems: queryItems).request()
          NetworkManager.shared.request(request, completion: completion)
         

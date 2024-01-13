@@ -26,7 +26,7 @@ extension UserProvier: Endpoint {
         }
     }
     
-    var queryItems: [String : Any]? {
+    var queryItems: [URLQueryItem]? {
         return nil
     }
 
