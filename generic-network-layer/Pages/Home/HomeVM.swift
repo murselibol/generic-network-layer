@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeVMInterface {
     func viewDidLoad()
-    func pullToGetPosts()
+    func colletionViewWillDisplay(at indexPath: IndexPath)
 }
 
 final class HomeVM {
@@ -52,10 +52,11 @@ extension HomeVM: HomeVMInterface {
         self.getPosts()
     }
     
-    func pullToGetPosts() {
+    func colletionViewWillDisplay(at indexPath: IndexPath) {
+        guard indexPath.row == posts.count - 3 else { return }
         if let queryIndex = paginationQuery.firstIndex(where: { $0.name == "_page" }) {
             let currentPage = Int(paginationQuery[queryIndex].value!)! + 1
-            paginationQuery.append(.init(name: "_page", value: String(currentPage)))
+            paginationQuery[queryIndex].value = String(currentPage)
             getPosts()
         }
     }

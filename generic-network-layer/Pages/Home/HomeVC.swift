@@ -62,10 +62,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastRowIndex = tableView.numberOfRows(inSection: 0) - 1
-
-        if indexPath.row == lastRowIndex - 2 {
-            viewModel.pullToGetPosts()
-        }
+        viewModel.colletionViewWillDisplay(at: indexPath)
     }
 }
